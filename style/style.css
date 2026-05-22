@@ -1,3 +1,15 @@
+@import "https://cdn.jsdelivr.net/gh/aaaakshat/cm-web-fonts@latest/fonts.css";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap");
+
+/* ─── CJK font: 新明細體 for all Chinese characters ─── */
+/* Priority: Windows (新細明體) → macOS (Songti TC) → web (Noto Serif TC) */
+@font-face {
+    font-family: "CJKMing";
+    src: local("PMingLiU"), local("新細明體"), local("新明細體"),
+         local("Songti TC"), local("宋體-繁"), local("LiSong Pro");
+    unicode-range: U+2E80-U+2EFF, U+3000-U+9FFF, U+F900-U+FAFF, U+FF00-U+FFEF;
+}
+
 /* ─── Base ─────────────────────────────────────────────── */
 
 * {
@@ -7,11 +19,20 @@
 }
 
 body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 19px;
-    line-height: 1.7;
-    color: #222;
+    font-family: "Computer Modern Serif", "CJKMing", "Noto Serif TC", serif;
+    font-size: 16px;
+    line-height: 1.1;
+    color: #000;
     background: #fff;
+}
+
+a:link {
+    color: #006699;
+    text-decoration: underline;
+}
+
+a:visited, a:active {
+    color: #906;
 }
 
 a:hover {
@@ -131,8 +152,8 @@ nav a.active {
 /* ─── Section headings ──────────────────────────────────── */
 
 h2 {
-    font-size: 1.15em;
-    font-weight: bold;
+    font-size: 1.5em;
+    font-weight: bolder;
     margin: 36px 0 12px;
     padding-bottom: 4px;
 }
@@ -143,8 +164,8 @@ h2 {
 }
 
 h3 {
-    font-size: 1em;
-    font-weight: bold;
+    font-size: 1.25em;
+    font-weight: bolder;
     margin: 22px 0 6px;
     color: #444;
 }
@@ -196,8 +217,56 @@ ul li {
 .pub-list li .links a {
     margin-left: 4px;
 }
+/* ─── Home page map embed ──────────────────────────────── */
 
+.map-embed-block {
+    width: 100%;
+    margin-top: 32px;
+}
+
+.map-toggle-heading {
+    cursor: pointer;
+    user-select: none;
+    color: #006699;
+}
+
+.map-toggle-heading:hover {
+    text-decoration: underline;
+}
+
+.map-toggle-arrow {
+    font-size: 0.65em;
+    vertical-align: middle;
+    margin-left: 6px;
+    color: #555;
+}
+
+.map-embed-block iframe {
+    display: block;
+    width: 100%;
+    height: 520px;
+    border: 0;
+}
+
+.map-caption {
+    font-style: italic;
+    color: #444;
+    margin-top: 8px;
+    margin-bottom: 12px;
+    font-size: 0.97em;
+}
 /* ─── Contact block ──────────────────────────────────────── */
+
+button.map-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #006699;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: inherit;
+    font-family: inherit;
+}
 
 .contact-block {
     margin-bottom: 24px;
